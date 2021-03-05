@@ -5,22 +5,22 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: userCmdApi-RegisterUser
-          uri: http://localhost:8081/api/v1/registerUser
+        - id: personCmdApi-RegisterUser
+          uri: http://localhost:8081/api/v1/createPerson
           predicates:
-            - Path=/api/v1/registerUser
+            - Path=/api/v1/createPerson
 
-        - id: userCmdApi-UpdateUser
-          uri: http://localhost:8081/api/v1/updateUser/**
+        - id: personCmdApi-UpdateUser
+          uri: http://localhost:8081/api/v1/updatePerson/**
           predicates:
-            - Path=/api/v1/updateUser/**
+            - Path=/api/v1/updatePerson/**
 
-        - id: userCmdApi-RemoveUser
-          uri: http://localhost:8081/api/v1/removeUser/**
+        - id: personCmdApi-RemovePerson
+          uri: http://localhost:8081/api/v1/removePerson/**
           predicates:
-            - Path=/api/v1/removeUser/**
+            - Path=/api/v1/removePerson/**
 
-        - id: userQueryApi
-          uri: http://localhost:8082/api/v1/userLookup/**
+        - id: personQueryApi
+          uri: http://localhost:8082/api/v1/personLookup/**
           predicates:
-            - Path=/api/v1/userLookup/**
+            - Path=/api/v1/personLookup/**
